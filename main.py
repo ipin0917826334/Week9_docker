@@ -1,10 +1,12 @@
-
 import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 import numpy as np
 import cv2
 import base64
+from typing import List
+
+
 
 app = FastAPI()
 
@@ -42,10 +44,3 @@ async def process_image(image_request: ImageRequest):
             "surname": image_request.surname,
             "numbers": image_request.numbers,
             "processed_image": processed_image}
-
-
-
-
-
-
-
